@@ -13,6 +13,7 @@ import styled from "styled-components";
 
 const StyledTopNav = styled(TopNav)`
   border-bottom: none;
+  flex: 0 1 auto;
 `;
 
 const StyledArcgisAccount = styled(ArcgisAccount)`
@@ -37,8 +38,8 @@ class AppHeader extends React.Component {
         </TopNavList>
         <TopNavActionsList style={{ padding: 0, marginLeft: "auto" }}>
           <StyledArcgisAccount
-            user={"John"}
-            portal={"Doe"}
+            user={{ username: "johndoe", fullName: "John Doe" }}
+            portal={{ access: "private", allSSL: false }}
             onRequestSwitchAccount={() => console.log("switch account clicked")}
             onRequestSignOut={() => console.log("sign out clicked")}
           >
